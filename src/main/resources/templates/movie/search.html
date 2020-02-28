@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Buscador de películas</title>
+</head>
+<body>
+	
+	<h1>FILTROS</h1>
+		
+	<hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="raitingGreaterThanInput">Filtrar por RAITING MÍNIMO</label> 
+			<br> 
+			<input
+				id="raitingGreaterThanInput" type="number" min=0 max=5 step=0.5 name="raitingBuscado">
+			<input type="hidden" name="filtro" value="raitingGreaterThan"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+	
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="raitingLessThanInput">Filtrar por RAITING MÁXIMO</label> 
+			<br> 
+			<input
+				id="raitingLessThanInput" type="number" min=0 max=5 step=0.5 name="raitingBuscado">
+			<input type="hidden" name="filtro" value="raitingLessThan"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+	
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="raitingLessThanEqualInput">Filtrar por RAITING MÁXIMO (inclusive)</label> 
+			<br> 
+			<input
+				id="raitingLessThanEqualInput" type="number" min=0 max=5 step=0.5 name="raitingBuscado">
+			<input type="hidden" name="filtro" value="raitingLessThanEqual"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+		
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="byTitleInput">Filtrar por TÍTULO</label> 
+			<br> 
+			<input
+				id="byTitleInput" type="text" name="tituloBuscado">
+			<input type="hidden" name="filtro" value="byTitle"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+		
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="byCategoryInput">Filtrar por CATEGORÍA</label> 
+			<br> 
+			<input
+				id="byCategoryInput" type="text" name="categoriaBuscada">
+			<input type="hidden" name="filtro" value="byCategory"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+		
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="byTitleStartingWithInput">Filtrar por TÍTULO COMENZANDO CON</label> 
+			<br> 
+			<input
+				id="byTitleStartingWithInput" type="text" name="tituloBuscado">
+			<input type="hidden" name="filtro" value="byTitleStartingWith"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+		
+	<br><hr><br>
+	
+	<div>
+		<form action="/movies/search-result" method="POST">
+			<label for="orderedByCategoryDescInput">Ordenados por CATEGORÍA de forma DESCENDENTE</label>  
+			<input type="hidden" name="filtro" value="orderedByCategoryDesc"> 
+			<br><br>
+			<button type="submit">Filtrar</button>
+		</form>
+	</div>
+		
+	<br><hr><br>	
+</body>
+</html>

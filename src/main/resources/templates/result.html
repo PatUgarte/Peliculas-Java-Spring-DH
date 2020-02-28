@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>::: Resultado :::</title>
+</head>
+<body>
+
+	<h1 th:if="${pudoAgregar}">PELICULA CARGADA CON ÉXITO</h1>
+	<h1 th:unless="${pudoAgregar}">NO SE PUDO CARGAR LA PELÍCULA</h1>
+
+	<br>
+	<br>
+
+	<a href="/movies">Volver a la lista</a>
+</body>
+</html>

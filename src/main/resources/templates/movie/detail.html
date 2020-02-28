@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="'Detalle de '+${peli.title}"></title>
+</head>
+<body>
+	<h1 th:text="${peli.title}"></h1>
+	<div>
+		<ul>
+			<li th:text="'Categoría: '+${peli.category}"></li>
+			<li th:text="'Rating: '+${peli.raiting}"></li>
+			<li th:text="'Awards: '+${peli.awards}"></li>
+		</ul>
+	</div>
+	<div>
+		<form action="/movies/add">
+			<a th:href="@{'/movies/get/' + ${peli.id-1}}"
+				th:text="'Película anterior'"></a> 
+			<a th:href="@{'/movies/get/' + ${peli.id+1}}"
+				th:text="'Película siguiente'"></a>
+		</form>
+	</div>
+</body>
+</html>

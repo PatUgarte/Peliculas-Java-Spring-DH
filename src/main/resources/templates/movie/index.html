@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>::: Películas :::</title>
+</head>
+<body>
+	<h1>Listado de nuestras películas:</h1>
+	<div th:unless="${movieList.isEmpty()}">
+		<ul th:each="movie : ${movieList}" type="none">
+			<li>
+			<a th:href="@{'/movies/get/' + ${movie.id}}"
+				th:text="${movie.title}"></a>
+			</li>
+			
+			<ul>
+				<li th:text="'Categoría: '+${movie.category}"></li>
+				<li th:text="'Rating: '+${movie.raiting}"></li>
+				<li th:text="'Awards: '+${movie.awards}"></li>
+			</ul>
+		</ul>
+	</div>
+	<div th:if="${movieList.isEmpty()}">
+		<p>No hay películas registradas. Añade una tu misma/o.</p>
+	</div>
+	<div>
+		<form action="/movies/add">
+			<button type="submit">Agregar película</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Rating greater than</title>
+</head>
+<body>
+	<div th:switch="${filtro}">
+		<h1 th:case="'raitingGreaterThan'" th:text="'Resultados de películas con Raiting mayor a ' + ${raitingBuscado}"></h1>
+		<h1 th:case="'raitingLessThan'" th:text="'Resultados de películas con Raiting menor a ' + ${raitingBuscado}"></h1>
+		<h1 th:case="'raitingLessThanEqual'" th:text="'Resultados de películas con Raiting menor o igual a ' + ${raitingBuscado}"></h1>
+		<h1 th:case="'byTitle'" th:text="'Resultados de películas con el nombre ' + ${tituloBuscado}"></h1>
+		<h1 th:case="'byCategory'" th:text="'Resultados de películas con la categoría ' + ${categoriaBuscada}"></h1>
+		<h1 th:case="'byTitleStartingWith'" th:text="'Resultados de películas que empiezan con ' + ${tituloBuscado}"></h1>
+		<h1 th:case="'orderedByCategoryDesc'" th:text="'Todas las películas, ordenadas de forma descendente por Categoría'"></h1>
+	</div>
+
+	<ul th:each="unaPelicula : ${listaDePeliculas}" type="none">
+		<li>
+		<a th:href="@{'/movies/get/' + ${unaPelicula.id}}" th:text="${unaPelicula.title}"></a>
+		</li>
+
+		<ul>
+			<li th:text="'Categoría: '+${unaPelicula.category}"></li>
+			<li th:text="'Rating: '+${unaPelicula.raiting}"></li>
+			<li th:text="'Awards: '+${unaPelicula.awards}"></li>
+		</ul>
+	</ul>
+
+</body>
+</html>
